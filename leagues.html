@@ -1,98 +1,133 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>🏏 Cricket World</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, rgba(115, 119, 119, 1), rgba(55, 56, 56, 1), hsla(0, 0%, 42%, 1.00));
-      color: rgba(16, 247, 236, 1);
-    }
-    header {
-      text-align: center;
-      padding: 20px;
-      background-color: hsla(14, 92%, 49%, 0.98);
-      border-bottom: 2px solid #fff;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      margin: 0 15px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #ffd700;
-    }
-    section {
-      padding: 40px;
-      text-align: center;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.7);
-      font-size: 0.9rem;
-    }
-      @media(max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-    }
-    header {
-      text-align: center;
-      padding: 20px;
-      background-color: hsla(220, 13%, 28%, 0.98);
-      border-bottom: 2px solid rgba(245, 12, 12, 1);
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      margin: 0 20px;
-      color: hsla(17, 95%, 50%, 1.00);
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #ffd700;
-    }
-    section {
-      padding: 40px;
-      text-align: center;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.7);
-      font-size: 0.9rem;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏏 Cricket World - Leagues</title>
+<style>
+  /* ===== Global Styles ===== */
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+  body{
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:#fff;
+    min-height:100vh;
+  }
+
+  /* ===== Header & Navbar ===== */
+  header{
+    position:sticky;top:0;z-index:1000;
+    background:rgba(236, 3, 3, 1);
+    backdrop-filter:blur(10px);
+    padding:20px 10px;text-align:center;
+  }
+  header h1{
+    font-size:2.8rem;
+    background: linear-gradient(to right,#ffd700,#fff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation: glow 2s infinite alternate;
+  }
+  @keyframes glow{
+    0%{text-shadow:0 0 10px #ffd700,0 0 20px #fff;}
+    100%{text-shadow:0 0 20px #fff,0 0 30px #ffd700;}
+  }
+  nav{
+    display:flex;justify-content:center;flex-wrap:wrap;margin-top:10px;gap:12px;
+  }
+  nav a{
+    text-decoration:none;color:#fff;font-weight:600;padding:8px 15px;border-radius:8px;
+    background:rgba(255,255,255,0.1);
+    transition:all 0.3s ease;
+  }
+  nav a:hover{
+    background:#ffd700;color:#000;transform:scale(1.1);
+  }
+
+  /* ===== Hero Section ===== */
+  .hero{
+    text-align:center;padding:60px 20px 40px;
+  }
+  .hero h2{
+    font-size:3rem;
+    background: linear-gradient(to right,#ffb347,#ffcc33);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation: glow 2s infinite alternate;
+    margin-bottom:15px;
+  }
+  .hero p{
+    font-size:1.2rem;color:#ccc;
+  }
+
+  /* ===== Leagues Grid ===== */
+  .leagues-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    padding:40px;
+  }
+  .league-card{
+    background:rgba(255,255,255,0.05);
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    backdrop-filter:blur(15px);
+    transition:transform 0.5s, box-shadow 0.5s;
+    cursor:pointer;
+    border:2px solid rgba(255,255,255,0.2);
+  }
+  .league-card img{
+    width:150px;height:100px;object-fit:cover;
+    border-radius:12px;
+    margin-bottom:15px;
+    border:2px solid #ffd700;
+    transition:all 0.0s ease;
+  }
+  .league-card h3{
+    font-size:1.5rem;margin-bottom:10px;color:#ffd700;
+  }
+  .league-card:hover{
+    transform:scale(1.00) rotateX(0deg) rotateY(0deg);
+    box-shadow:0 25px 50px rgba(255,215,0,0.7);
+  }
+  .league-card:hover img{
+    transform:scale(1.00) rotate(5deg);
+  }
+
+  /* ===== Footer ===== */
+  footer{
+    text-align:center;padding:20px;
+    background-color:rgba(0,0,0,0.7);
+    font-size:0.9rem;color:#ccc;
+  }
+
+  /* ===== Responsive ===== */
+  @media(max-width:768px){
+    .hero h2{font-size:2rem;}
+    nav a{margin:5px;padding:6px 10px;}
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h2>🏏 Cricket World</h2>
-    <nav>
-     <a href="index.html">Home</a>
-      <a href="players.html">Players</a>
-      <a href="teams.html">Teams</a>
-      <a href="rankings.html">Rankings</a>
-      <a href="stadiums.html">Stadiums</a>
-      <a href="leagues.html">Leagues</a>
-      <a href="contact.html">Contact</a>
-      <a href="about.html">About</a>
-    </nav>
-  </header>
-    <h1>🌍 WORLD CRICKET LEAGUES 🌍</h1>
+
+<header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="players.html">Players</a>
+    <a href="teams.html">Teams</a>
+    <a href="rankings.html">Rankings</a>
+    <a href="stadiums.html">Stadiums</a>
+    <a href="leagues.html">Leagues</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+    <br>
+    <h1>🌍CRICKET WORLD LEAGUES🌍</h1>
+    </br>
+    <br>
     <p>Explore famous cricket leagues around the world</p>
+    </br>
   </header>
 
   <section class="league-container">
@@ -129,7 +164,7 @@
 
     <div class="league-card">
       <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAnFBMVEX/AIT/////AID7///3AH/9+/31drX/AIL///3/AH77AILxiLz64u/++v/2BoX/AIX0YaTxPZjz5PL3QZb3SJv2cq35AHjzz+X3AIT68PbyjcD22ev3///37fn5+//4AHb2VaLvfrP2crTwAHfxp8ryvdnuOJfwJo3xZ6r11OnsSJ3yHIftGI3zEYvyWqXvncb3AG3xAHLwmMjtrtNOk1q5AAADzElEQVR4nO3d60LaMABA4aYtpjCEKY6LoKi76HTuwt7/3UYpdeBoEkKKaXbOv+pW8glKm16IIiIiIiIiIiIiIiIiIiIPk/EqedAqpKrY2VjtRnf2YdWFNVHGNx/UjWXf5ZD3bH6eiGXJaWq5AhnfzlarqCwZpYe8Qg6sPzwvhmEtjG8TNXDZqOd00HtVCrOWrTC91gLF7O7tfhcdCFtaoEhOmi3MECKstUCEfUVhCOWwuo9XAQjlWVeRCEAYn1S/J5ffCVdYhrA6hAhdtBRqB9Fw4d1M9egBCKPxQ/UMw20QwiiuLJoHsdWmKJDtUkUI9SFEWHcI9fkvvFoPIlRh1P7UneZ9DlYYddaH12z/v//CQ0N4HKHyEG2R9bq9EMovZ9rubY0+COWDfhZDTJr8t/S/mKdBiFBRU4QieGFy3WShvJls9nLuxNZXvzZZGHV6440ei2c06W591Rboh3C5/7BRb/2aHQ23NttsTz3zQ7hVT6yGlIzaTlbnr1AgNAwhwhpCuGcIEbppa+NlXArn4cxExfcbU06Dck9j8jjY+OpTs2eidp2LsX0Giv3VCD4I2QPOC38WA2F1actgjsQDofXvofxmcM2MF8JyJmrPXX35PNWvu/53i8frU12taWf9j8fjcc+49H5q8NM7wjt+qm9YvOPLQaL9aWxm4jvKdqnxAUQ5mGXmJZn+7+iRhMYtn0OjMe8XQgfj3uNV2khh+v29tkGThfGD5lJk8XffoqHCPbZpwhVmCBEifDPh6+sPGy5MrvKuy8ed5EunIQmTHz/nw+H8fm2Y/sqXfk0CEorLON+/fX6Z8+7/e55344X54tasPkKECBEiRIgQIUKECBEiRLgp/DsjXAPwOMIsE8lamIj82J8YDaPiSud8oTzKvXwOM2F8/FDob+x5FKG8KO5bdv6wOsCUfi0WF6tHbf8ulj6XwnPVrc9eN73yQhhJ2cl7OYLWKdq1FPU7+xSPR14I66sfGREbLFy+BHqngQu9OCeq3nw4ry3q13k7bS+EtV6Q74Xw6cKgjn49O/NBaHQNqeD80qoQInQRQoTqECJ0EUKE6hAidBFChOoQInQRQoTqECJ0EUKE6hAidBFChOoQInQRQoTqECJ0EUKE6hAidBFChOoQInQRQoTq0pZ25UcQqj55fJ39ZwUZfHD7rPZz9btCc8WdEAvbyxHkQrfyTHSfnXp2DOJZd6fY2SK1FqYLzcqTqfUN340HIZ/eKbs8ie3HIId3l+rVPx1w237jUbTVHQBcpll5u34fERERERERERERERERUVV/AB+DnS0NmJdgAAAAAElFTkSuQmCC" alt="The Hundred">
-      <h3>🏴󠁧󠁢󠁥󠁮󠁧󠁿 </h3> England - The Hundred</h3>
+      <h3>🏴 England - The Hundred</h3>
       <p>100 balls, 1 intense game. England's fresh cricket format!</p>
     </div>
 
@@ -159,4 +194,3 @@
 </body>
 </html>
   
-

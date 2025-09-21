@@ -12,6 +12,7 @@
       box-sizing: border-box;
       font-family: "Poppins", sans-serif;
     }
+
     body {
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: white;
@@ -26,21 +27,25 @@
       top: 0;
       z-index: 1000;
     }
+
     nav ul {
       list-style: none;
       display: flex;
       justify-content: center;
       padding: 15px;
     }
+
     nav ul li {
       margin: 0 15px;
     }
+
     nav ul li a {
       text-decoration: none;
       color: #fff;
       font-weight: 600;
       transition: color 0.3s;
     }
+
     nav ul li a:hover {
       color: #ffcc00;
     }
@@ -50,29 +55,31 @@
       text-align: center;
       padding: 50px 20px;
     }
+
     .hero h1 {
       font-size: 3rem;
       margin-bottom: 10px;
-      background: linear-gradient(to right, #aaa387ff, #ffffff);
+      background: linear-gradient(to right, #f1f5f7ff, #edf6f7ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: glow 2s infinite alternate;
     }
+
     @keyframes glow {
-      from { text-shadow: 0 0 10px #ffcc00; }
-      to { text-shadow: 0 0 20px #fff; }
+      from { text-shadow: 0 0 10px #ff3c00ff; }
+      to { text-shadow: 0 0 20px #db1919ff; }
     }
 
     /* ===== Team Grid ===== */
     .teams-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      padding: 40px;
+      gap: 150px;
+      padding: 50px;
     }
 
     .team-card {
-      background: rgba(89, 202, 236, 1);
+      background: rgba(184, 250, 1, 1);
       border-radius: 20px;
       padding: 20px;
       text-align: center;
@@ -80,21 +87,24 @@
       transition: transform 0.5s, box-shadow 0.5s;
       cursor: pointer;
     }
+
     .team-card img {
-      width: 120px;
-      height: 80px;
+      width: 150px;
+      height: 100px;
       object-fit: cover;
       border-radius: 12px;
       margin-bottom: 15px;
-      border: 2px solid #adaca72a;
+      border: 2px solid #c2a514ff;
     }
+
     .team-card h2 {
       font-size: 1.5rem;
-      color: #ccab1628;
+      color: #0a0a0aff;
     }
+
     .team-card:hover {
       transform: scale(1.08) rotateX(10deg) rotateY(10deg);
-      box-shadow: 0 20px 40px rgba(248, 13, 13, 0.81);
+      box-shadow: 0 40px 60px rgba(248, 13, 13, 0.81);
     }
 
     /* ===== Responsive ===== */
@@ -109,6 +119,7 @@
   </style>
 </head>
 <body>
+
   <!-- ===== Navbar ===== -->
   <header>
     <nav>

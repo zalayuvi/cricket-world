@@ -1,7 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICC Teams - Cricket World</title>
+  <style>
+    /* ===== Global Styles ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      min-height: 100vh;
+    }
 
-    </style>
+    /* ===== Navbar ===== */
+    header {
+      background: rgba(231, 25, 25, 1);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ffcc00;
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      background: linear-gradient(to right, #aaa387ff, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ffcc00; }
+      to { text-shadow: 0 0 20px #fff; }
+    }
+
+    /* ===== Team Grid ===== */
+    .teams-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 40px;
+    }
+
+    .team-card {
+      background: rgba(89, 202, 236, 1);
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      backdrop-filter: blur(15px);
+      transition: transform 0.5s, box-shadow 0.5s;
+      cursor: pointer;
+    }
+    .team-card img {
+      width: 120px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      border: 2px solid #adaca72a;
+    }
+    .team-card h2 {
+      font-size: 1.5rem;
+      color: #ccab1628;
+    }
+    .team-card:hover {
+      transform: scale(1.08) rotateX(10deg) rotateY(10deg);
+      box-shadow: 0 20px 40px rgba(248, 13, 13, 0.81);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      nav ul {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- ===== Navbar ===== -->
   <header>
     <nav>
       <ul>
@@ -16,8 +124,16 @@
       </ul>
     </nav>
   </header>
-  <section id="teams"
-      <div class="team-card">
+
+  <!-- ===== Hero Section ===== -->
+  <section class="hero">
+    <h1>🌍ICC Top 12 Teams cricket world🌍</h1>
+    <p>Explore the world’s best cricket teams</p>
+  </section>
+
+  <!-- ===== Teams Grid ===== -->
+  <section class="teams-container">
+   <div class="team-card">
         <img src="data:image/jpeg;base64,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" alt="India Flag">
         <h2>India</h2>
       </div>
@@ -84,6 +200,4 @@
   </div>
 </body>
 </html>
-
   
-

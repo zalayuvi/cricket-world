@@ -3,104 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cricket World - OTP Login</title>
-<link rel="stylesheet" href="login.css"/>
-<style>
-  
-body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #222, #555);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #fff;
-  }
-  .login-container {
-    background: rgba(0,0,0,0.8);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 0 20px #f5d78e;
-    text-align: center;
-    width: 300px;
-  }
-  .login-container h2 {
-    margin-bottom: 20px;
-    color: #f5d78e;
-  }
-  .login-container input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-  }
-  .login-container button {
-    width: 100%;
-    padding: 10px;
-    background: #f5d78e;
-    border: none;
-    border-radius: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  .error {
-    color: #ff4c4c;
-    margin-top: 10px;
-  }
-
-</style>
+<title>Cricket World - Login</title>
+<link rel="stylesheet" href="login.css" />
 </head>
 <body>
+
 <div class="login-container">
-  <h2>Login with OTP</h2>
+  <h1>🏏 Cricket World Login</h1>
+  <p>Enter your mobile number to receive OTP</p>
   
-  <div id="step1">
-    <input type="text" id="phone" placeholder="Enter Mobile Number">
-    <button onclick="sendOTP()">Send OTP</button>
-  </div>
+  <input type="text" id="phone" placeholder="Enter Mobile Number" maxlength="10">
+  <button id="sendOtpBtn" onclick="sendOtp()">Send OTP</button>
 
-  <div id="step2" style="display:none;">
-    <input type="text" id="otp" placeholder="Enter OTP">
-    <button onclick="verifyOTP()">Verify OTP</button>
+  <div id="otpSection" style="display:none;">
+    <input type="text" id="otpInput" placeholder="Enter OTP" maxlength="6">
+    <button onclick="verifyOtp()">Verify OTP</button>
   </div>
-
-  <div class="error" id="errorMsg"></div>
 </div>
 
 <script>
-let generatedOTP;
+let generatedOtp = null;
 
-function sendOTP() {
-  const phone = document.getElementById('phone').value;
-  const errorMsg = document.getElementById('errorMsg');
-
-  if(phone.length !== 10 || isNaN(phone)) {
-    errorMsg.textContent = "Enter a valid 10-digit number!";
+function sendOtp() {
+  const phone = document.getElementById("phone").value.trim();
+  if (phone.length !== 10 || isNaN(phone)) {
+    alert("Please enter a valid 10-digit mobile number!");
     return;
   }
-
-  generatedOTP = Math.floor(1000 + Math.random() * 9000); // 4-digit OTP
-  alert("Your OTP is: " + generatedOTP); // Normally sent via SMS
-  document.getElementById('step1').style.display = "none";
-  document.getElementById('step2').style.display = "block";
-  errorMsg.textContent = "";
+  
+  // Generate mock OTP
+  generatedOtp = Math.floor(100000 + Math.random() * 900000);
+  
+  // Show OTP Section
+  document.getElementById("otpSection").style.display = "block";
+  
+  // For demo purposes
+  alert("Your OTP is: " + generatedOtp + "\n(Testing Purpose Only)");
 }
 
-function verifyOTP() {
-  const otpInput = document.getElementById('otp').value;
-  const errorMsg = document.getElementById('errorMsg');
-
-  if(otpInput == generatedOTP) {
-    alert("Login Successful!");
-    window.location.href = "index.html"; // redirect to homepage
+function verifyOtp() {
+  const enteredOtp = document.getElementById("otpInput").value.trim();
+  
+  if (enteredOtp === generatedOtp.toString()) {
+    alert("✅ Login Successful!");
+    localStorage.setItem("loggedIn", "true");
+    window.location.href = "index.html";
   } else {
-    errorMsg.textContent = "Incorrect OTP, try again!";
+    alert("❌ Invalid OTP! Please try again.");
   }
 }
-
 </script>
+
 </body>
 </html>

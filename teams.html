@@ -4,135 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ICC Teams - Cricket World</title>
+  <link rel="stylesheet" href="teams.css" />
   <style>
-    /* ===== Global Styles ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    body {
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: white;
-      min-height: 100vh;
-    }
-
-    /* ===== Navbar ===== */
-    header {
-      background: rgba(231, 25, 25, 1);
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      padding: 15px;
-    }
-
-    nav ul li {
-      margin: 0 15px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #ffcc00;
-    }
-
-    /* ===== Hero Section ===== */
-    .hero {
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      background: linear-gradient(to right, #f1f5f7ff, #edf6f7ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: glow 2s infinite alternate;
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #ff3c00ff; }
-      to { text-shadow: 0 0 20px #db1919ff; }
-    }
-
-    /* ===== Team Grid ===== */
-    .teams-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 150px;
-      padding: 50px;
-    }
-
-    .team-card {
-      background: rgba(184, 250, 1, 1);
-      border-radius: 20px;
-      padding: 20px;
-      text-align: center;
-      backdrop-filter: blur(15px);
-      transition: transform 0.5s, box-shadow 0.5s;
-      cursor: pointer;
-    }
-
-    .team-card img {
-      width: 150px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      border: 2px solid #c2a514ff;
-    }
-
-    .team-card h2 {
-      font-size: 1.5rem;
-      color: #0a0a0aff;
-    }
-
-    .team-card:hover {
-      transform: scale(1.08) rotateX(10deg) rotateY(10deg);
-      box-shadow: 0 40px 60px rgba(248, 13, 13, 0.81);
-    }
-
-    /* ===== Responsive ===== */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      nav ul {
-        flex-wrap: wrap;
-      }
-    }
   </style>
 </head>
 <body>
 
-  <!-- ===== Navbar ===== -->
   <header>
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="players.html">Players</a></li>
-        <li><a href="rankings.html">Rankings</a></li>
-        <li><a href="teams.html">Teams</a></li>
-        <li><a href="stadiums.html">Stadiums</a></li>
-        <li><a href="leagues.html">Leagues</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
+      <a href="index.html">Home</a>
+      <a href="history.html">History</a>
+      <a href="players.html">Players</a>
+      <a href="teams.html">Teams</a>
+      <a href="rankings.html">Rankings</a>
+      <a href="stadiums.html">Stadiums</a>
+      <a href="leagues.html">Leagues</a>
+      <a href="contact.html">Contact</a>
+      <a href="about.html">About</a>
     </nav>
   </header>
 
@@ -202,9 +90,11 @@
       <div class="team-card">
         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAAM1BMVEX///8AAADIEC4AhD0AeB/NAC3GABzNEC+CVzYAhz2CCh7kp6x5UCcAeyDrrLPrrrN5AACAmKMeAAABfUlEQVR4nO3QxxHDMADAMKf3OPtPmyGosx8CNiCX41CX++M0k8W+wr7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvmT0vvfnPJPB+67fZS6D97327tmYfYl9iX2JfYl9iX2JfYl9iX2JfYl9iX2JfYl9iX2JfYl9iX2JfYl9iX2JfYl9iX2JfYl9iX2JfYl9iX2JfYl9iX2JfYl9iX2JfYl9iX2JfYl9iX2JfYl9iX2JfYl9iX2JfYl9yeB96949Gxu77/Y7TGX0vufeQduyL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS+xL7EvsS/5A1YOMgc2ZZteAAAAAElFTkSuQmCC" alt="UAE">
         <h2>UAE</h2>
-     </div>   
-  </div>
+     </div>
+ <footer
+    Design by.yuvraj & prakash zala group.
+  </footer>
 </body>
 </html>
+   
 
-  
